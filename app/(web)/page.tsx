@@ -24,20 +24,19 @@ export default function HomePage() {
         />
 
         <div className="flex flex-col items-center gap-3">
-          <span
-            className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold"
-          >
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold">
             Próximamente
           </span>
-          <p className="max-w-sm text-sm text-brand-text/60">
+          <h1 className="text-2xl font-bold text-brand-navy">
             Estamos construyendo algo grande.
-            <br />
+          </h1>
+          <p className="max-w-sm text-sm text-brand-text/60">
             Mientras tanto puedes contactarnos en{" "}
             <a
-              href="mailto:contacto@aditmex.com.mx"
+              href="mailto:ventas@aditmex.com.mx"
               className="text-brand-navy underline-offset-2 hover:underline"
             >
-              contacto@aditmex.com.mx
+              ventas@aditmex.com.mx
             </a>
           </p>
         </div>
