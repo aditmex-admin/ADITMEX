@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/web/navbar";
+import Footer from "@/components/web/footer";
 
 export const metadata: Metadata = {
   title: "ADITMEX — Distribuidora de materias primas",
@@ -19,5 +21,11 @@ export default function WebLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <>
+      <Navbar />
+      {children}
+      <Footer />
+    </>
+  );
 }
