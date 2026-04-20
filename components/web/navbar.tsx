@@ -3,20 +3,26 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { LogoMark } from "@/components/web/logo-mark";
 
 const NAV_LINKS = [
+  { label: "Inicio", href: "#inicio" },
   { label: "Quiénes somos", href: "#quienes-somos" },
   { label: "Categorías", href: "#categorias" },
+  { label: "Productos", href: "#productos" },
   { label: "Contacto", href: "#contacto" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("#inicio");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+      if (window.scrollY < 100) setActiveSection("#inicio");
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -61,9 +67,10 @@ export default function Navbar() {
             <Image
               src="/assets/aditmex-logo-white.svg"
               alt="ADITMEX"
-              width={160}
-              height={45}
-              className="h-9 w-auto"
+              width={200}
+              height={56}
+              className="h-11 w-auto"
+              priority
             />
           </a>
 
@@ -107,15 +114,12 @@ export default function Navbar() {
       >
         {/* Logo mark — watermark */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.03]">
-          <svg viewBox="0 0 4000 6900" className="h-[70vh] w-auto" fill="#C4AC4D" aria-hidden="true">
-            <path d="M1627 961c401,-44 816,49 1158,263 373,231 658,601 784,1022 127,416 98,878 -81,1274 -199,448 -587,808 -1049,972 -417,150 -889,140 -1299,-27 -405,-162 -746,-476 -943,-865 -196,-382 -248,-835 -147,-1252 93,-394 324,-753 641,-1003 268,-213 596,-348 936,-384l0 0zm-677 565c-203,441 -404,882 -606,1322 -9,19 -19,42 -1,59 284,398 567,796 850,1194 496,-45 992,-93 1488,-141 206,-452 416,-902 618,-1355 -42,-80 -103,-148 -153,-223 -236,-332 -472,-664 -709,-997 -496,46 -991,93 -1487,141z"/>
-            <path d="M32 4762c191,0 381,-3 572,-2 -12,254 16,517 135,745 142,282 394,507 691,615 435,163 956,50 1289,-273 221,-212 354,-508 381,-811 11,-91 3,-182 7,-273 191,-8 382,-2 573,-3 12,305 -25,617 -146,899 -172,413 -507,753 -914,939 -315,147 -671,204 -1015,157 -652,-85 -1238,-555 -1460,-1174 -97,-261 -128,-542 -113,-819z"/>
-          </svg>
+          <LogoMark className="h-[70vh] w-auto" />
         </div>
 
         {/* Barra superior */}
         <div className="relative flex h-16 shrink-0 items-center justify-between px-6">
-          <Image src="/assets/aditmex-logo-white.svg" alt="ADITMEX" width={160} height={45} className="h-9 w-auto" />
+          <Image src="/assets/aditmex-logo-white.svg" alt="ADITMEX" width={200} height={56} className="h-11 w-auto" />
           <button
             onClick={() => setOpen(false)}
             className="rounded-md p-2 text-white/70 transition-colors hover:text-white"
