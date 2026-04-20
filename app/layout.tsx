@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Montserrat } from "next/font/google";
@@ -15,8 +16,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aditmex.com.mx"),
   title: "ADITMEX",
-  description: "ADITMEX S. de R.L. — Distribuidora de aromas, alimentos, cosmética e industrial",
+  description: "ADITMEX S. de R.L. — Distribuidora de materias primas en México.",
 };
 
 export default function RootLayout({
@@ -26,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${geist.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
