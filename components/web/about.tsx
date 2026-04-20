@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LogoMark } from "@/components/web/logo-mark";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,15 +42,7 @@ export default function About() {
     >
       {/* Logo mark — watermark izquierdo */}
       <div className="pointer-events-none absolute left-[-10%] top-1/2 -translate-y-1/2 opacity-[0.045]">
-        <svg
-          viewBox="0 0 4000 6900"
-          className="h-[75vh] max-h-[640px] w-auto"
-          fill="#C4AC4D"
-          aria-hidden="true"
-        >
-          <path d="M1627 961c401,-44 816,49 1158,263 373,231 658,601 784,1022 127,416 98,878 -81,1274 -199,448 -587,808 -1049,972 -417,150 -889,140 -1299,-27 -405,-162 -746,-476 -943,-865 -196,-382 -248,-835 -147,-1252 93,-394 324,-753 641,-1003 268,-213 596,-348 936,-384l0 0zm-677 565c-203,441 -404,882 -606,1322 -9,19 -19,42 -1,59 284,398 567,796 850,1194 496,-45 992,-93 1488,-141 206,-452 416,-902 618,-1355 -42,-80 -103,-148 -153,-223 -236,-332 -472,-664 -709,-997 -496,46 -991,93 -1487,141z"/>
-          <path d="M32 4762c191,0 381,-3 572,-2 -12,254 16,517 135,745 142,282 394,507 691,615 435,163 956,50 1289,-273 221,-212 354,-508 381,-811 11,-91 3,-182 7,-273 191,-8 382,-2 573,-3 12,305 -25,617 -146,899 -172,413 -507,753 -914,939 -315,147 -671,204 -1015,157 -652,-85 -1238,-555 -1460,-1174 -97,-261 -128,-542 -113,-819z"/>
-        </svg>
+        <LogoMark className="h-[75vh] max-h-[640px] w-auto" />
       </div>
 
       {/* Corte angular decorativo — esquina inferior derecha */}
@@ -90,10 +83,9 @@ export default function About() {
             <div className="qs-item">
               <a
                 href="#contacto"
-                className="group relative inline-block overflow-hidden rounded-md bg-brand-navy px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                className="cta-bounce inline-block rounded-md border border-brand-gold bg-brand-gold px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-brand-gold"
               >
-                <span className="absolute inset-0 w-0 bg-brand-gold/25 transition-all duration-300 ease-out group-hover:w-full" />
-                <span className="relative">Contáctanos</span>
+                Contáctanos
               </a>
             </div>
           </div>
