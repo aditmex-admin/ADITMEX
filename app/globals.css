@@ -110,6 +110,21 @@
   animation: fade-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+@keyframes bounce-cta {
+  0%, 100% { transform: translateY(0); }
+  40%       { transform: translateY(-6px); }
+  65%       { transform: translateY(-3px); }
+}
+
+.cta-bounce {
+  animation: bounce-cta 2.8s ease-in-out infinite;
+}
+
+.cta-bounce:hover {
+  animation-play-state: paused;
+  transform: translateY(-2px);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
