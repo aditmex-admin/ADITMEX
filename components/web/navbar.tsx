@@ -124,7 +124,7 @@ export default function Navbar() {
 
         {/* Barra superior */}
         <div className="relative flex h-16 shrink-0 items-center justify-between px-6">
-          <Image src="/assets/aditmex-logo-white.svg" alt="ADITMEX" width={200} height={56} className="h-11 w-auto" />
+          <Image src="/assets/aditmex-logo-white.svg" alt="ADITMEX" width={200} height={56} className="h-11 w-auto" priority />
           <button
             onClick={() => setOpen(false)}
             className="rounded-md p-2 text-white/70 transition-colors hover:text-white"
