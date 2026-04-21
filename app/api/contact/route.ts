@@ -22,6 +22,10 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+// ── HTML escaping ────────────────────────────────────────────────────────────
+const esc = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
 // ── Handler ──────────────────────────────────────────────────────────────────
 export async function POST(req: Request) {
   const headersList = await headers();
@@ -55,26 +59,30 @@ export async function POST(req: Request) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  await resend.emails.send({
-    from: "ADITMEX Web <no-reply@aditmex.com.mx>",
-    to: [CONTACT_EMAIL],
-    replyTo: correo,
-    subject: `Nuevo mensaje de ${nombre}${empresa ? ` — ${empresa}` : ""}`,
-    html: `
-      <div style="font-family:sans-serif;max-width:560px;margin:0 auto">
-        <h2 style="color:#27274D;margin-bottom:4px">Nuevo mensaje desde aditmex.com.mx</h2>
-        <hr style="border:none;border-top:2px solid #C4AC4D;margin-bottom:24px"/>
-        <table style="width:100%;border-collapse:collapse">
-          <tr><td style="padding:8px 0;color:#6B7280;width:120px">Nombre</td><td style="padding:8px 0;font-weight:600">${nombre}</td></tr>
-          ${empresa ? `<tr><td style="padding:8px 0;color:#6B7280">Empresa</td><td style="padding:8px 0;font-weight:600">${empresa}</td></tr>` : ""}
-          <tr><td style="padding:8px 0;color:#6B7280">Correo</td><td style="padding:8px 0"><a href="mailto:${correo}" style="color:#C4AC4D">${correo}</a></td></tr>
-        </table>
-        <div style="margin-top:24px;padding:16px;background:#F8F8F8;border-radius:8px;border-left:3px solid #C4AC4D">
-          <p style="margin:0;color:#1A1A2E;white-space:pre-wrap">${mensaje}</p>
+  try {
+    await resend.emails.send({
+      from: "ADITMEX Web <no-reply@aditmex.com.mx>",
+      to: [CONTACT_EMAIL],
+      replyTo: correo,
+      subject: `Nuevo mensaje de ${nombre}${empresa ? ` — ${empresa}` : ""}`,
+      html: `
+        <div style="font-family:sans-serif;max-width:560px;margin:0 auto">
+          <h2 style="color:#27274D;margin-bottom:4px">Nuevo mensaje desde aditmex.com.mx</h2>
+          <hr style="border:none;border-top:2px solid #C4AC4D;margin-bottom:24px"/>
+          <table style="width:100%;border-collapse:collapse">
+            <tr><td style="padding:8px 0;color:#6B7280;width:120px">Nombre</td><td style="padding:8px 0;font-weight:600">${esc(nombre)}</td></tr>
+            ${empresa ? `<tr><td style="padding:8px 0;color:#6B7280">Empresa</td><td style="padding:8px 0;font-weight:600">${esc(empresa)}</td></tr>` : ""}
+            <tr><td style="padding:8px 0;color:#6B7280">Correo</td><td style="padding:8px 0"><a href="mailto:${esc(correo)}" style="color:#C4AC4D">${esc(correo)}</a></td></tr>
+          </table>
+          <div style="margin-top:24px;padding:16px;background:#F8F8F8;border-radius:8px;border-left:3px solid #C4AC4D">
+            <p style="margin:0;color:#1A1A2E;white-space:pre-wrap">${esc(mensaje)}</p>
+          </div>
         </div>
-      </div>
-    `,
-  });
+      `,
+    });
+  } catch {
+    return NextResponse.json({ error: "Error al enviar el mensaje" }, { status: 500 });
+  }
 
   return NextResponse.json({ ok: true });
 }
