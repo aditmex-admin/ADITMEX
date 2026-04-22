@@ -1,49 +1,17 @@
-import Image from "next/image";
+import Hero from "@/components/web/hero";
+import About from "@/components/web/about";
+import Categories from "@/components/web/categories";
+import Products from "@/components/web/products";
+import Contact from "@/components/web/contact";
 
 export default function HomePage() {
   return (
-    <main className="relative flex min-h-svh flex-col items-center justify-center bg-brand-gray overflow-hidden">
-      {/* Fondo decorativo */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, #e8e6f0 0%, transparent 70%)",
-        }}
-      />
-
-      {/* Contenido */}
-      <div className="animate-fade-in relative flex flex-col items-center gap-10 px-6 text-center">
-        <Image
-          src="/assets/Aditmex - logo.svg"
-          alt="ADITMEX Productos Químicos"
-          width={480}
-          height={136}
-          priority
-          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
-        />
-
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold">
-            Próximamente
-          </span>
-          <h1 className="text-2xl font-bold text-brand-navy">
-            Estamos construyendo algo grande.
-          </h1>
-          <p className="max-w-sm text-sm text-brand-text/60">
-            Mientras tanto puedes contactarnos en{" "}
-            <a
-              href="mailto:ventas@aditmex.com.mx"
-              className="text-brand-navy underline-offset-2 hover:underline"
-            >
-              ventas@aditmex.com.mx
-            </a>
-          </p>
-        </div>
-
-        {/* Línea decorativa */}
-        <div className="h-px w-16 bg-brand-gold/50" />
-      </div>
+    <main>
+      <Hero />
+      <About />
+      <Categories />
+      <Products />
+      <Contact />
     </main>
   );
 }
