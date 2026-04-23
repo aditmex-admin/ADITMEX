@@ -6,6 +6,7 @@ export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=10009468110
 export const CONTACT_EMAIL = "ventas@aditmex.com.mx";
 
 export const ADDRESS = "Santos Degollado 595, Col. Nueva Chapultepec, 58280 Morelia, Mich.";
+export const ADDRESS_ALMACEN = "Guillermo Massieu Helguera No. 34 Bodega A, Col. San José Ticomán, 07340 CDMX";
 
 export const MAP_EMBED_URL =
   "https://maps.google.com/maps?q=Santos+Degollado+595,+Nueva+Chapultepec,+58280+Morelia,+Michoacan,+Mexico&t=&z=16&ie=UTF8&iwloc=&output=embed";
