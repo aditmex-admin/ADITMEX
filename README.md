@@ -1,4 +1,5 @@
 # ADITMEX — Landing Page
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). 
 
 Sitio web público para **ADITMEX S. de R.L.**, distribuidora de materias primas para la industria de aromas, alimentos, cosmética e industrial en México.
 
