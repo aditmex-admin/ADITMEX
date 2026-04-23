@@ -72,6 +72,11 @@ export default function Products() {
       id="productos"
       ref={sectionRef}
       className="relative overflow-hidden bg-brand-light px-6 py-24 lg:py-32"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(39,39,77,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(39,39,77,0.055) 1px, transparent 1px)",
+        backgroundSize: "72px 72px",
+      }}
     >
       {/* Glows decorativos */}
       <div
