@@ -35,8 +35,8 @@ const CARDS = [
   },
   {
     key: "alimentos",
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
-    alt: "Ingredientes para la industria de alimentos — acidulantes, espesantes y conservadores, ADITMEX",
+    src: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=80",
+    alt: "Postres y repostería — ingredientes para alimentos, lácteos y confitería distribuidos por ADITMEX",
     label: "Alimentos",
     products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
     className: "col-span-2 md:col-span-2 md:row-span-2",
