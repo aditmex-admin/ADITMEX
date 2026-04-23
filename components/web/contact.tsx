@@ -1,24 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Warehouse } from "lucide-react";
 import { WaIcon } from "@/components/web/wa-icon";
 import {
   WA_URL,
   CONTACT_EMAIL,
   ADDRESS,
+  ADDRESS_ALMACEN,
   MAP_EMBED_URL,
 } from "@/lib/constants";
 
 const CONTACT_INFO = [
   { icon: Mail, label: "Correo", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-  {
-    icon: WaIcon,
-    label: "WhatsApp",
-    value: "+52 443 514 5662",
-    href: WA_URL,
-  },
-  { icon: MapPin, label: "Ubicación", value: ADDRESS, href: null },
+  { icon: WaIcon, label: "WhatsApp", value: "+52 443 514 5662", href: WA_URL },
 ];
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -94,16 +89,38 @@ export default function Contact() {
                   <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
                     {label}
                   </span>
-                  {href ? (
-                    <a href={href} className="text-sm font-medium text-white/80 transition-colors hover:text-white">
-                      {value}
-                    </a>
-                  ) : (
-                    <span className="text-sm font-medium text-white/80">{value}</span>
-                  )}
+                  <a href={href} className="text-sm font-medium text-white/80 transition-colors hover:text-white">
+                    {value}
+                  </a>
                 </div>
               </div>
             ))}
+
+            {/* Almacén */}
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-gold/25 bg-brand-gold/10">
+                <Warehouse className="h-4 w-4 text-brand-gold" />
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
+                  Almacén
+                </span>
+                <span className="text-sm font-medium text-white/80">{ADDRESS_ALMACEN}</span>
+              </div>
+            </div>
+
+            {/* Oficina */}
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-gold/25 bg-brand-gold/10">
+                <MapPin className="h-4 w-4 text-brand-gold" />
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
+                  Oficina
+                </span>
+                <span className="text-sm font-medium text-white/80">{ADDRESS}</span>
+              </div>
+            </div>
 
             <div className="mt-1 overflow-hidden rounded-xl border border-white/10">
               <iframe
