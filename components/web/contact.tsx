@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Warehouse } from "lucide-react";
 import { WaIcon } from "@/components/web/wa-icon";
 import {
   WA_URL,
@@ -96,24 +96,29 @@ export default function Contact() {
               </div>
             ))}
 
-            {/* Ubicaciones — oficina y almacén */}
+            {/* Almacén */}
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-gold/25 bg-brand-gold/10">
+                <Warehouse className="h-4 w-4 text-brand-gold" />
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
+                  Almacén
+                </span>
+                <span className="text-sm font-medium text-white/80">{ADDRESS_ALMACEN}</span>
+              </div>
+            </div>
+
+            {/* Oficina */}
             <div className="flex items-start gap-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-gold/25 bg-brand-gold/10">
                 <MapPin className="h-4 w-4 text-brand-gold" />
               </div>
-              <div className="flex flex-col gap-3">
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
-                    Oficina
-                  </span>
-                  <span className="text-sm font-medium text-white/80">{ADDRESS}</span>
-                </div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
-                    Almacén
-                  </span>
-                  <span className="text-sm font-medium text-white/80">{ADDRESS_ALMACEN}</span>
-                </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/40">
+                  Oficina
+                </span>
+                <span className="text-sm font-medium text-white/80">{ADDRESS}</span>
               </div>
             </div>
 
