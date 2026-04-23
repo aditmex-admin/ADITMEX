@@ -15,7 +15,7 @@ const CARDS = [
     alt: "Maquinaria agrícola en campo — materias primas para sector industrial, ADITMEX Morelia",
     label: "Industrial",
     products: ["Carbómero", "LESS 28% / 70%", "Glicerina USP", "Parafina china"],
-    className: "col-span-2 md:col-span-2 md:row-span-2",
+    className: "col-span-2",
   },
   {
     key: "aceite",
@@ -23,15 +23,7 @@ const CARDS = [
     alt: "Frasco de aceite esencial — aceite de coco RBD, argán y aguacate distribuidos por ADITMEX",
     label: "Aceites naturales",
     products: ["Aceite de coco RBD", "Aceite de argán", "Aceite de aguacate"],
-    className: "col-span-2 md:col-span-1 md:row-span-1",
-  },
-  {
-    key: "alimentos",
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
-    alt: "Ingredientes para la industria de alimentos — acidulantes, espesantes y conservadores, ADITMEX",
-    label: "Alimentos",
-    products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
-    className: "col-span-2 md:col-span-1 md:row-span-1",
+    className: "col-span-1",
   },
   {
     key: "cosmetica",
@@ -39,7 +31,15 @@ const CARDS = [
     alt: "Polvo cosmético rosa — ingredientes para cosmética como Vitamina C, ácido láctico y emulsionantes, ADITMEX",
     label: "Cosmética",
     products: ["Vitamina C", "Ácido láctico", "Ceteareth 20", "Trietanolamina"],
-    className: "col-span-2 md:col-span-2",
+    className: "col-span-1",
+  },
+  {
+    key: "alimentos",
+    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
+    alt: "Ingredientes para la industria de alimentos — acidulantes, espesantes y conservadores, ADITMEX",
+    label: "Alimentos",
+    products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
+    className: "col-span-2",
   },
 ] as const;
 
@@ -113,7 +113,7 @@ export default function Products() {
         {/* Bento grid — 2 cols mobile / 3 cols desktop */}
         <div
           ref={gridRef}
-          className="grid auto-rows-[200px] grid-cols-2 gap-3 md:auto-rows-[230px] md:grid-cols-3 lg:auto-rows-[255px] xl:auto-rows-[275px]"
+          className="grid auto-rows-[220px] grid-cols-2 gap-3 md:auto-rows-[300px] md:grid-cols-3 lg:auto-rows-[340px] xl:auto-rows-[360px]"
         >
           {CARDS.map((card) => (
             <div
