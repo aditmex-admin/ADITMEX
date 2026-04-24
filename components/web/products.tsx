@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CARDS = [
   {
-    key: "industrial",
-    src: "/assets/images/agroindustria.avif",
-    alt: "Maquinaria agrícola en campo — materias primas para sector industrial, ADITMEX Morelia",
-    label: "Industrial",
-    products: ["Carbómero", "LESS 28% / 70%", "Glicerina USP", "Parafina china"],
+    key: "alimentos",
+    src: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=900&q=80",
+    alt: "Variedad de alimentos — dulces, lácteos, snacks y bebidas con aditivos distribuidos por ADITMEX",
+    label: "Alimentos",
+    products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
     className: "col-span-2 md:col-span-2 md:row-span-2",
   },
   {
@@ -34,11 +34,11 @@ const CARDS = [
     className: "col-span-1 md:col-span-1 md:row-span-2",
   },
   {
-    key: "alimentos",
-    src: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=80",
-    alt: "Postres y repostería — ingredientes para alimentos, lácteos y confitería distribuidos por ADITMEX",
-    label: "Alimentos",
-    products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
+    key: "industrial",
+    src: "/assets/images/agroindustria.avif",
+    alt: "Maquinaria agrícola en campo — materias primas para sector industrial, ADITMEX Morelia",
+    label: "Industrial",
+    products: ["Carbómero", "LESS 28% / 70%", "Glicerina USP", "Parafina china"],
     className: "col-span-2 md:col-span-2 md:row-span-2",
   },
 ] as const;
