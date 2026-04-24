@@ -48,13 +48,15 @@ const SECTIONS: Section[] = [
   {
     icon: Mail,
     title: "Correo corporativo",
-    badge: "Google Workspace",
-    url: "https://admin.google.com",
+    badge: "Google Workspace · Hostinger",
+    url: "https://hpanel.hostinger.com",
     rows: [
       { label: "Proveedor", value: "Google Workspace (Business Starter)" },
+      { label: "Contratado a través de", value: "Hostinger — la suscripción se gestiona desde el panel de Hostinger" },
       { label: "Correo activo", value: "ventas@aditmex.com.mx" },
-      { label: "MX configurados en", value: "Hostinger — apuntan a los servidores de Google" },
-      { label: "Acceso al panel de admin", value: "admin.google.com → Continuar con Google" },
+      { label: "Dónde administrarlo", value: "hpanel.hostinger.com → Google Workspace" },
+      { label: "Renovación", value: "Se gestiona junto con el plan de Hostinger" },
+      { label: "MX configurados en", value: "Hostinger — apuntan automáticamente a los servidores de Google" },
     ],
     warnings: [
       "No toques los registros MX en Hostinger. Si se eliminan o modifican, el correo ventas@aditmex.com.mx deja de recibir mensajes de inmediato.",
