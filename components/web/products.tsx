@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const CARDS = [
   {
     key: "alimentos",
-    src: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=900&q=80",
+    src: "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=900&q=80",
     alt: "Lácteos, pan y chocolate — ingredientes para la industria alimentaria distribuidos por ADITMEX",
     label: "Alimentos",
     products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
