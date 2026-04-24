@@ -11,8 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 const CARDS = [
   {
     key: "alimentos",
-    src: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=900&q=80",
-    alt: "Variedad de alimentos — dulces, lácteos, snacks y bebidas con aditivos distribuidos por ADITMEX",
+    src: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=900&q=80",
+    alt: "Lácteos, pan y chocolate — ingredientes para la industria alimentaria distribuidos por ADITMEX",
     label: "Alimentos",
     products: ["Ácido cítrico", "Dextrosa monohidratada", "Goma xantana", "Sorbato de potasio"],
     className: "col-span-2 md:col-span-2 md:row-span-2",
