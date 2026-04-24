@@ -86,12 +86,13 @@ const SECTIONS: Section[] = [
     url: "https://github.com/aditmex-admin/ADITMEX",
     rows: [
       { label: "Repositorio", value: "github.com/aditmex-admin/ADITMEX (privado)" },
-      { label: "Rama de producción", value: "stg" },
-      { label: "Flujo de deploy", value: "Push a stg → Vercel detecta el cambio → deploy automático en ~1 min" },
+      { label: "Rama principal", value: "main — contiene el código estable de producción" },
+      { label: "Rama de cambios", value: "stg — aquí se hacen y prueban los cambios antes de aprobarlos" },
+      { label: "Flujo de deploy", value: "Cambios en stg → revisión → merge a main → Vercel despliega automáticamente" },
       { label: "Acceso", value: "Invitación de colaborador — solicitar al desarrollador" },
     ],
     warnings: [
-      "No elimines la rama stg — es la rama conectada a Vercel. Si se borra, el sitio deja de actualizarse automáticamente.",
+      "No elimines la rama main ni la rama stg. La rama main es la que está conectada a Vercel — si se borra, el sitio deja de actualizarse.",
     ],
   },
   {
@@ -102,7 +103,7 @@ const SECTIONS: Section[] = [
     rows: [
       { label: "Plan", value: "Hobby (gratuito)" },
       { label: "Dominio conectado", value: "aditmex.com.mx → apuntado desde Hostinger" },
-      { label: "Deploy automático", value: "Sí — cada push a la rama stg genera un deploy nuevo" },
+      { label: "Deploy automático", value: "Sí — cada push a la rama main genera un deploy nuevo en producción" },
       { label: "Variable de entorno", value: "RESEND_API_KEY → Settings → Environment Variables" },
       { label: "Analytics", value: "Vercel Analytics + Speed Insights activos en el dashboard" },
     ],
