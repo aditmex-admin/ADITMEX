@@ -105,7 +105,7 @@ export default function Products() {
             </h2>
           </div>
           <a
-            href="/assets/pdf/Catalogo-ADITMEX.pdf"
+            href="/assets/pdf/Catalogo-ADITMEX-2026.pdf"
             download
             className="cta-bounce group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-md border border-brand-gold bg-brand-gold px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white"
           >
