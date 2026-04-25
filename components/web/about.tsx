@@ -139,7 +139,7 @@ export default function About() {
 
         {/* Track full-bleed rompiendo el px-6 de la sección */}
         <div
-          className="-mx-6 overflow-hidden"
+          className="-mx-6 overflow-hidden group"
           style={{
             maskImage:
               "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
@@ -147,7 +147,7 @@ export default function About() {
               "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
           }}
         >
-          <div className="animate-marquee flex w-max items-center gap-8 md:gap-16 will-change-transform">
+          <div className="animate-marquee flex w-max items-center gap-8 md:gap-16 will-change-transform group-hover:[animation-play-state:paused]">
             {TRACK.map((brand, i) => (
               <div key={i} className="flex h-14 w-28 shrink-0 items-center justify-center md:h-20 md:w-44">
                 <Image
@@ -155,7 +155,7 @@ export default function About() {
                   alt={brand.alt}
                   width={176}
                   height={80}
-                  className="max-h-10 w-auto max-w-[104px] object-contain grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 md:max-h-16 md:max-w-[160px]"
+                  className="max-h-10 w-auto max-w-[104px] object-contain mix-blend-multiply md:max-h-16 md:max-w-[160px]"
                 />
               </div>
             ))}
