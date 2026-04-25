@@ -1,11 +1,23 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LogoMark } from "@/components/web/logo-mark";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const BRANDS = [
+  { src: "/assets/brands/ensign.png", alt: "Ensign" },
+  { src: "/assets/brands/rzbc.png", alt: "RZBC" },
+  { src: "/assets/brands/fufeng.png", alt: "Fufeng" },
+  { src: "/assets/brands/wannianhuo.png", alt: "Wannianhuo" },
+  { src: "/assets/brands/altrafine_gums.png", alt: "Altrafine Gums" },
+  { src: "/assets/brands/basf.png", alt: "BASF" },
+] as const;
+
+const TRACK = [...BRANDS, ...BRANDS];
 
 const STATS = [
   { value: "10+", label: "Años de experiencia en la industria" },
@@ -38,7 +50,7 @@ export default function About() {
     <section
       id="quienes-somos"
       ref={sectionRef}
-      className="relative overflow-hidden bg-brand-light px-6 py-24 lg:py-32"
+      className="relative overflow-hidden bg-brand-light px-6 py-16 lg:py-24"
     >
       {/* Logo mark — watermark izquierdo */}
       <div className="pointer-events-none absolute left-[-10%] top-1/2 -translate-y-1/2 opacity-[0.045]">
@@ -111,6 +123,43 @@ export default function About() {
             ))}
           </div>
 
+        </div>
+      </div>
+
+      {/* Marcas aliadas */}
+      <div className="relative z-10 mt-16">
+        {/* Eyebrow centrado */}
+        <div className="mb-8 flex items-center justify-center gap-4">
+          <div className="h-px w-10 bg-brand-gold" />
+          <span className="text-base font-semibold uppercase tracking-[0.2em] text-brand-gold">
+            Marcas aliadas
+          </span>
+          <div className="h-px w-10 bg-brand-gold" />
+        </div>
+
+        {/* Track full-bleed rompiendo el px-6 de la sección */}
+        <div
+          className="-mx-6 overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          }}
+        >
+          <div className="animate-marquee flex w-max items-center gap-8 md:gap-16 will-change-transform">
+            {TRACK.map((brand, i) => (
+              <div key={i} className="flex h-14 w-28 shrink-0 items-center justify-center md:h-20 md:w-44">
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  width={176}
+                  height={80}
+                  className="max-h-10 w-auto max-w-[104px] object-contain grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 md:max-h-16 md:max-w-[160px]"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

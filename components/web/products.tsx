@@ -130,7 +130,7 @@ export default function Products() {
                   src={card.src}
                   alt={card.alt}
                   fill
-                  priority={card.key === "industrial"}
+                  priority={card.key === "alimentos"}
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 50vw"
                 />
