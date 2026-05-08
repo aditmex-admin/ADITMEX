@@ -1,0 +1,8 @@
+# Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-agent: *
+Allow: /
+Allow: /api/contact
+Disallow: /api/
+
+Sitemap: https://aditmex.com.mx/sitemap.xml
