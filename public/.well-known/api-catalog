@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://aditmex.com.mx",
+      "service-desc": [
+        {
+          "href": "https://aditmex.com.mx/.well-known/agent-skills/index.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aditmex.com.mx/api/markdown",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}

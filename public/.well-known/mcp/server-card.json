@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "name": "ADITMEX",
+  "description": "Comercializadora de materias primas con más de 10 años de experiencia en México.",
+  "url": "https://aditmex.com.mx",
+  "contact": {
+    "email": "ventas@aditmex.com.mx",
+    "whatsapp": "https://wa.me/524435145662"
+  },
+  "location": { "city": "Morelia", "state": "Michoacán", "country": "MX" },
+  "capabilities": ["product-information", "quote-request", "catalog-browsing"],
+  "apiCatalog": "https://aditmex.com.mx/.well-known/api-catalog",
+  "agentSkills": "https://aditmex.com.mx/.well-known/agent-skills/index.json",
+  "markdownEndpoint": "https://aditmex.com.mx/api/markdown"
+}

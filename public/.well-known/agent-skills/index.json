@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "provider": {
+    "name": "ADITMEX S. de R.L.",
+    "url": "https://aditmex.com.mx",
+    "contact": "ventas@aditmex.com.mx"
+  },
+  "skills": [
+    {
+      "id": "contact",
+      "name": "Solicitar cotización o información",
+      "description": "Envía un mensaje al equipo comercial de ADITMEX para solicitar cotización, disponibilidad o información sobre materias primas.",
+      "endpoint": "https://aditmex.com.mx/api/contact",
+      "method": "POST",
+      "inputSchema": {
+        "type": "object",
+        "required": ["nombre", "correo", "mensaje"],
+        "properties": {
+          "nombre": { "type": "string" },
+          "empresa": { "type": "string" },
+          "correo": { "type": "string", "format": "email" },
+          "mensaje": { "type": "string" }
+        }
+      }
+    },
+    {
+      "id": "catalog",
+      "name": "Explorar catálogo de productos",
+      "description": "Obtiene el catálogo completo de materias primas en formato markdown.",
+      "endpoint": "https://aditmex.com.mx/api/markdown",
+      "method": "GET",
+      "outputFormat": "text/markdown"
+    }
+  ]
+}
